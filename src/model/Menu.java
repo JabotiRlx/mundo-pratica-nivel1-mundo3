@@ -113,37 +113,23 @@ public class Menu {
      
     public final static void limparConsole()
     {
-    try
-    {
-        final String os = System.getProperty("os.name");
+        try
+        {
+            final String os = System.getProperty("os.name");
 
-        if (os.contains("Windows"))
-        {
-            Runtime.getRuntime().exec("cls");
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
         }
-        else
+        catch (final Exception e)
         {
-            Runtime.getRuntime().exec("clear");
+            //  Handle any exceptions.
         }
     }
-    catch (final Exception e)
-    {
-        //  Handle any exceptions.
-    }
-}
-//    public void opcoes(String opcao) {
-//            switch(opcao) {
-//                case "1":
-//                  // code block
-//                  break;
-//                case "2":
-//                  // code block
-//                  break;
-//                case "0":
-//                    System.exit(0);
-//                  break;
-//                default:
-//                  System.out.println("Opcao invalida!");
-//            }
-//    }
+
 }
